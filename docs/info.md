@@ -9,11 +9,7 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-This project implements a Tic-Tac-Toe game using multiplexed RGB LEDs and simple combinational/sequential logic.
-Each of the 9 game fields is displayed using a common-cathode RGB LED.
-When a player presses a button assigned to a cell, the logic evaluates the current game state and updates only that cell. The LED color indicates the player (e.g., red for Player X, green/blue for Player O, depending on your configuration).
-The LEDs are multiplexed to reduce the number of required I/O pins.
-The circuit repeatedly cycles through all LEDs at high speed, updating their color according to the stored flip-flop state. Due to persistence of vision, the user perceives all LEDs as continuously illuminated.
+This project implements a Tic-Tac-Toe game using multiplexed RGB LEDs. Each of the 9 game fields is displayed using a common-cathode RGB LED. When a player presses a button assigned to a cell, the logic evaluates the current game state and updates only that cell. The LED color indicates the player (e.g., red for Player X, green/blue for Player O, depending on your configuration).
 When a winning combination is detected, the logic evaluates the grid and drives an additional RGB LED to show the winner’s color.
 
 ## How to test
@@ -27,6 +23,6 @@ When a player wins, the winner LED displays their color.
 
 ## External hardware
 
-9× push-buttons (one per board field)
-10× RGB LEDs (common cathode)
-Current-limiting resistors (optional, depending on test setup)
+9× push-buttons
+10× RGB LEDs (common-cathode)
+resistors 
