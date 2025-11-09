@@ -9,12 +9,24 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-It works by Multiplexing 9 RGB-LEDs and alternating each RGB-LED Color when a button is clicked. When a player wins a RGB-LED will light up according to the winner colour.
+This project implements a Tic-Tac-Toe game using multiplexed RGB LEDs and simple combinational/sequential logic.
+Each of the 9 game fields is displayed using a common-cathode RGB LED.
+When a player presses a button assigned to a cell, the logic evaluates the current game state and updates only that cell. The LED color indicates the player (e.g., red for Player X, green/blue for Player O, depending on your configuration).
+The LEDs are multiplexed to reduce the number of required I/O pins.
+The circuit repeatedly cycles through all LEDs at high speed, updating their color according to the stored flip-flop state. Due to persistence of vision, the user perceives all LEDs as continuously illuminated.
+When a winning combination is detected, the logic evaluates the grid and drives an additional RGB LED to show the winner’s color.
 
 ## How to test
 
-You can test it by wire it up according to the wokwi project. You will also need to set the clock to about 100 Hz. 
+Wire the circuit according to the Wokwi design (push-buttons, RGB LEDs, connectors).
+Set the simulation clock to approximately 100 Hz (or faster if preferred).
+Press any of the 9 buttons to place a move.
+The LED for that position lights up in the corresponding player color.
+Continue placing moves alternately.
+When a player wins, the winner LED displays their color.
 
 ## External hardware
 
-9 Push-Buttons, 10 RGB-LEDs (Common Cathode) -> 9 for displaying the game and 1 for displaying the winner
+9× push-buttons (one per board field)
+10× RGB LEDs (common cathode)
+Current-limiting resistors (optional, depending on test setup)
